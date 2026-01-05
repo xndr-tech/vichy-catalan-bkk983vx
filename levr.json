@@ -1,0 +1,105 @@
+{
+  "version": "2.0",
+  "schemaVersion": "2.1",
+  "siteId": "bkk983vx",
+  "name": "Vichy Catalan",
+  "description": "A fan site about vichy catalan.",
+  "siteType": "one-page",
+  "colorScheme": "rose",
+  "font": "Montserrat",
+  "tags": [
+    "water",
+    "sparkling"
+  ],
+  "tools": [],
+  "credentialSetId": "",
+  "model": "gemini-2.5-flash",
+  "customHtml": false,
+  "createdAt": 1767654488582,
+  "updatedAt": 1767654488582,
+  "buildMetadata": {
+    "levrVersion": "0.5.3",
+    "templateVersion": "2.0.0",
+    "templateType": "site",
+    "promptVersions": {
+      "html": "2.0.0",
+      "tags": "2.0.0"
+    },
+    "workflowVersions": {
+      "deploy": "1.2.0"
+    },
+    "buildTimestamp": 1767654488582,
+    "buildId": "bkk983vx",
+    "model": "gemini-2.5-flash",
+    "modelProvider": "gemini",
+    "modelInfo": {
+      "name": "gemini-2.5-flash",
+      "provider": "gemini",
+      "family": "gemini-2.5",
+      "version": "2.5",
+      "variant": "flash"
+    }
+  },
+  "source": {
+    "github": {
+      "owner": "xndr-tech",
+      "repo": "vichy-catalan-bkk983vx",
+      "branch": "main",
+      "url": "https://github.com/xndr-tech/vichy-catalan-bkk983vx"
+    },
+    "cloudflare": {
+      "accountId": "b6af5ded35131641c4ebe125bbbf0250",
+      "workerName": "vichy-catalan-bkk983vx",
+      "subdomain": "",
+      "previewUrl": ""
+    },
+    "credentialSetId": ""
+  },
+  "buildHistory": [
+    {
+      "buildId": "bkk983vx",
+      "timestamp": 1767654488582,
+      "type": "initial",
+      "model": "gemini-2.5-flash",
+      "levrVersion": "0.5.3",
+      "success": true
+    }
+  ],
+  "workflows": {
+    "version": "1.0.0",
+    "levrVersion": "0.5.3",
+    "modules": {
+      "deploy": {
+        "enabled": true,
+        "version": "1.2.0",
+        "file": "deploy.yml"
+      },
+      "preview": {
+        "enabled": true,
+        "version": "1.2.0",
+        "file": "preview.yml"
+      },
+      "qa": {
+        "enabled": true,
+        "version": "1.1.0",
+        "file": "qa.yml"
+      },
+      "seo": {
+        "enabled": false,
+        "version": "1.1.0",
+        "file": "seo.yml"
+      },
+      "lighthouse": {
+        "enabled": false,
+        "version": "1.1.0",
+        "file": "lighthouse.yml"
+      },
+      "security": {
+        "enabled": false,
+        "version": "1.0.0",
+        "file": "security.yml"
+      }
+    },
+    "generatedAt": 1767654488582
+  }
+}

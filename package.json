@@ -1,0 +1,17 @@
+{
+  "name": "vichy-catalan-bkk983vx",
+  "version": "1.0.0",
+  "private": true,
+  "description": "A fan site about vichy catalan.",
+  "type": "module",
+  "scripts": {
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy",
+    "deploy:preview": "wrangler deploy --env preview"
+  },
+  "devDependencies": {
+    "@cloudflare/workers-types": "^4.20250109.0",
+    "wrangler": "^4.0.0",
+    "typescript": "^5.7.2"
+  }
+}
