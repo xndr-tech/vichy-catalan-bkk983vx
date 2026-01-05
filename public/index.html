@@ -3,79 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vichy Catalan - A Fan Tribute</title>
-    <meta name="description" content="Vichy Catalan fan site dedicated to exploring the history, health benefits, and unique taste of this iconic Spanish sparkling mineral water.">
+    <title>Vichy Catalan: Official Fan Site</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary-color: #e11d48; /* Rose Red */
-            --secondary-color: #fff1f2; /* User specified secondary: Lightest Pink */
-            --light-rose: #fbcfe8; /* Light Rose Pink */
-            --dark-rose: #be185d; /* Darker Rose */
+            --primary-color: #e11d48;
             --text-color: #333;
-            --light-bg: #fff;
-            --dark-bg: #ffe4e6; /* Misty Rose for a softer background, similar to secondary */
-            --section-bg-alt: var(--secondary-color); /* Use secondary for alternating section background */
-            --border-radius: 8px;
-            --padding-section: 80px 0;
-            --gap-items: 30px;
+            --light-bg: #f8f8f8;
+            --white: #fff;
+            --gray-border: #ddd;
         }
 
-        /* Base Styles */
-        html {
-            scroll-behavior: smooth;
-            font-family: 'Montserrat', sans-serif;
-            color: var(--text-color);
-            line-height: 1.6;
-            font-size: 16px; /* Base font size */
-        }
-
-        body {
+        * {
             margin: 0;
             padding: 0;
-            background-color: var(--light-bg);
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh;
-            overflow-x: hidden;
-        }
-
-        *, *::before, *::after {
             box-sizing: border-box;
         }
 
-        a {
-            text-decoration: none;
-            color: var(--primary-color);
-        }
-
-        a:hover {
-            color: var(--dark-rose);
-        }
-
-        h1, h2, h3, h4, h5, h6 {
-            margin-top: 0;
-            margin-bottom: 0.5em;
-            font-weight: 700;
-            line-height: 1.2;
+        body {
+            font-family: 'Montserrat', sans-serif;
+            line-height: 1.6;
             color: var(--text-color);
-        }
-
-        h1 { font-size: 2.8em; }
-        h2 { font-size: 2.2em; }
-        h3 { font-size: 1.8em; }
-        h4 { font-size: 1.4em; }
-
-        p {
-            margin-bottom: 1em;
-        }
-
-        img {
-            max-width: 100%;
-            height: auto;
-            display: block;
+            background: var(--white);
         }
 
         .container {
@@ -84,742 +35,409 @@
             padding: 0 20px;
         }
 
-        /* Buttons */
-        .btn {
-            display: inline-block;
-            padding: 12px 25px;
-            background-color: var(--primary-color);
-            color: var(--light-bg);
-            border: none;
-            border-radius: var(--border-radius);
-            font-weight: 600;
-            cursor: pointer;
-            transition: background-color 0.3s ease, transform 0.2s ease;
-            text-align: center;
-        }
-
-        .btn:hover {
-            background-color: var(--dark-rose);
-            transform: translateY(-2px);
-            color: var(--light-bg);
-        }
-
-        .btn-outline {
-            background-color: transparent;
-            border: 2px solid var(--primary-color);
-            color: var(--primary-color);
-        }
-
-        .btn-outline:hover {
-            background-color: var(--primary-color);
-            color: var(--light-bg);
-        }
-
-        /* Header */
         header {
-            background-color: var(--light-bg);
-            padding: 15px 0;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
+            background: var(--white);
+            padding: 20px 0;
+            border-bottom: 1px solid var(--gray-border);
         }
 
         header .container {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            flex-wrap: wrap;
         }
 
-        .logo {
+        header .logo {
             font-size: 1.8em;
             font-weight: 700;
             color: var(--primary-color);
-            display: flex;
-            align-items: center;
-            flex-shrink: 0;
+            text-decoration: none;
         }
 
-        .logo-icon {
-            margin-right: 10px;
-            font-size: 1.2em;
-            display: inline-block;
-            transform: rotate(-15deg);
-            color: var(--dark-rose);
-        }
-
-        nav ul {
+        header nav ul {
             list-style: none;
-            margin: 0;
-            padding: 0;
             display: flex;
-            gap: 25px;
         }
 
-        nav ul li a {
+        header nav ul li {
+            margin-left: 30px;
+        }
+
+        header nav ul li a {
+            text-decoration: none;
             color: var(--text-color);
             font-weight: 500;
             transition: color 0.3s ease;
-            padding: 5px 0;
-            position: relative;
         }
 
-        nav ul li a::after {
-            content: '';
-            position: absolute;
-            width: 0;
-            height: 2px;
-            background-color: var(--primary-color);
-            left: 0;
-            bottom: 0;
-            transition: width 0.3s ease;
-        }
-
-        nav ul li a:hover::after,
-        nav ul li a.active::after {
-            width: 100%;
-        }
-
-        nav ul li a:hover {
+        header nav ul li a:hover {
             color: var(--primary-color);
         }
 
-        /* Hero Section */
         .hero {
-            background: linear-gradient(135deg, var(--secondary-color) 0%, var(--dark-bg) 100%);
-            padding: var(--padding-section);
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/Vichy_Catalan_Bottle_2017.jpg/1200px-Vichy_Catalan_Bottle_2017.jpg') no-repeat center center/cover;
+            color: var(--white);
             text-align: center;
+            padding: 150px 0;
             position: relative;
-            overflow: hidden;
-            display: flex;
-            align-items: center;
-            min-height: 70vh;
-        }
-
-        .hero .container {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            position: relative;
-            z-index: 1;
         }
 
         .hero h1 {
-            font-size: 3.8em;
-            color: var(--primary-color);
-            margin-bottom: 0.4em;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+            font-size: 3.5em;
+            margin-bottom: 20px;
+            font-weight: 700;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
         }
 
         .hero p {
             font-size: 1.4em;
+            margin-bottom: 40px;
+            font-weight: 300;
             max-width: 800px;
-            margin-bottom: 2em;
-            color: var(--text-color);
-            opacity: 0.9;
+            margin-left: auto;
+            margin-right: auto;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.7);
         }
 
-        .hero .btn-group {
-            display: flex;
-            gap: 20px;
-            flex-wrap: wrap;
-            justify-content: center;
+        .button {
+            display: inline-block;
+            background: var(--primary-color);
+            color: var(--white);
+            padding: 15px 30px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: 600;
+            font-size: 1.1em;
+            transition: background 0.3s ease, transform 0.3s ease;
+            border: none;
+            cursor: pointer;
         }
 
-        .hero-image {
-            position: absolute;
-            bottom: -50px;
-            right: 0;
-            left: 0;
-            margin: auto;
-            width: 400px;
-            max-width: 80%;
-            opacity: 0.1;
-            transform: rotate(15deg);
-            transition: opacity 0.5s ease;
-            z-index: 0;
+        .button:hover {
+            background: #c01a3f; /* Slightly darker primary */
+            transform: translateY(-2px);
         }
 
-        /* General Section Styles */
         section {
-            padding: var(--padding-section);
-            background-color: var(--light-bg);
-        }
-
-        section:nth-of-type(odd) {
-            background-color: var(--section-bg-alt);
+            padding: 80px 0;
         }
 
         section h2 {
             text-align: center;
-            margin-bottom: 1.5em;
-            color: var(--primary-color);
             font-size: 2.5em;
+            margin-bottom: 60px;
+            color: var(--primary-color);
+            position: relative;
+        }
+
+        section h2::after {
+            content: '';
+            position: absolute;
+            width: 80px;
+            height: 4px;
+            background: var(--primary-color);
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            border-radius: 2px;
         }
 
         /* Features Section */
+        .features {
+            background: var(--light-bg);
+        }
+
         .features-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: var(--gap-items);
+            gap: 30px;
             text-align: center;
-            margin-top: 50px;
         }
 
-        .feature-item {
-            background-color: var(--light-bg);
-            padding: 30px;
-            border-radius: var(--border-radius);
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+        .feature-card {
+            background: var(--white);
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
-        .feature-item:hover {
+        .feature-card:hover {
             transform: translateY(-10px);
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
         }
 
-        .feature-item i {
+        .feature-card .icon {
             font-size: 3em;
             color: var(--primary-color);
             margin-bottom: 20px;
+        }
+        /* Using simple text for icons as requested for clean code */
+        .feature-card .icon span {
             display: block;
+            width: 60px;
+            height: 60px;
+            line-height: 60px;
+            border-radius: 50%;
+            background: var(--primary-color);
+            color: var(--white);
+            font-size: 1.5em;
+            margin: 0 auto 20px;
         }
 
-        .feature-item h3 {
-            color: var(--dark-rose);
+        .feature-card h3 {
+            font-size: 1.5em;
             margin-bottom: 15px;
+            color: var(--text-color);
+        }
+
+        .feature-card p {
+            font-size: 1em;
+            color: #555;
         }
 
         /* About Section */
-        .about-content {
+        .about .content {
             display: flex;
-            flex-wrap: wrap;
-            gap: var(--gap-items);
-            align-items: center;
-        }
-
-        .about-content > div {
-            flex: 1;
-            min-width: 300px;
-        }
-
-        .about-text h3 {
-            font-size: 2em;
-            color: var(--dark-rose);
-            margin-bottom: 0.8em;
-            text-align: left;
-        }
-
-        .about-image {
-            text-align: center;
-        }
-
-        .about-image img {
-            border-radius: var(--border-radius);
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
-        }
-
-        /* Products Section */
-        .products-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: var(--gap-items);
-            margin-top: 50px;
-        }
-
-        .product-card {
-            background-color: var(--light-bg);
-            border-radius: var(--border-radius);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
-            overflow: hidden;
-            text-align: center;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .product-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
-        }
-
-        .product-card img {
-            width: 100%;
-            height: 250px;
-            object-fit: cover;
-            object-position: center;
-            border-bottom: 1px solid #eee;
-        }
-
-        .product-info {
-            padding: 25px;
-        }
-
-        .product-info h3 {
-            color: var(--primary-color);
-            margin-bottom: 10px;
-            font-size: 1.6em;
-        }
-
-        .product-info p {
-            font-size: 0.95em;
-            color: #666;
-            margin-bottom: 20px;
+            flex-direction: column;
+            gap: 30px;
+            max-width: 900px;
+            margin: 0 auto;
+            font-size: 1.1em;
+            line-height: 1.8;
+            text-align: justify;
         }
 
         /* Contact Section */
-        .contact-content {
-            display: flex;
-            flex-wrap: wrap;
-            gap: var(--gap-items);
-            justify-content: center;
-            margin-top: 50px;
+        .contact {
+            background: var(--light-bg);
         }
 
-        .contact-form-container {
-            flex: 2;
-            min-width: 350px;
-            background-color: var(--light-bg);
+        .contact-form {
+            max-width: 700px;
+            margin: 0 auto;
+            background: var(--white);
             padding: 40px;
-            border-radius: var(--border-radius);
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
         }
 
-        .contact-info-container {
-            flex: 1;
-            min-width: 250px;
-            background-color: var(--primary-color);
-            color: var(--light-bg);
-            padding: 40px;
-            border-radius: var(--border-radius);
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-        }
-
-        .contact-info-container h3 {
-            color: var(--light-bg);
-            margin-bottom: 20px;
-        }
-
-        .contact-info-container p {
-            margin-bottom: 10px;
-            display: flex;
-            align-items: center;
-        }
-
-        .contact-info-container p i {
-            margin-right: 10px;
-            font-size: 1.2em;
-        }
-
-        .social-links {
-            margin-top: 30px;
-            display: flex;
-            gap: 15px;
-        }
-
-        .social-links a {
-            color: var(--light-bg);
-            font-size: 1.8em;
-            transition: color 0.3s ease;
-        }
-
-        .social-links a:hover {
-            color: var(--secondary-color);
+        .contact-form .form-group {
+            margin-bottom: 25px;
         }
 
         .contact-form label {
             display: block;
-            margin-bottom: 8px;
+            margin-bottom: 10px;
             font-weight: 600;
+            color: var(--text-color);
         }
 
         .contact-form input[type="text"],
         .contact-form input[type="email"],
         .contact-form textarea {
             width: 100%;
-            padding: 12px;
-            margin-bottom: 20px;
-            border: 1px solid #ccc;
-            border-radius: var(--border-radius);
+            padding: 15px;
+            border: 1px solid var(--gray-border);
+            border-radius: 5px;
             font-family: 'Montserrat', sans-serif;
             font-size: 1em;
+            transition: border-color 0.3s ease;
+        }
+
+        .contact-form input[type="text"]:focus,
+        .contact-form input[type="email"]:focus,
+        .contact-form textarea:focus {
+            outline: none;
+            border-color: var(--primary-color);
         }
 
         .contact-form textarea {
             resize: vertical;
-            min-height: 120px;
+            min-height: 150px;
         }
 
         .contact-form button {
             width: 100%;
             padding: 15px;
             font-size: 1.1em;
-            border-radius: var(--border-radius);
         }
 
         /* Footer */
         footer {
-            background-color: var(--text-color);
-            color: var(--light-bg);
-            padding: 40px 0;
+            background: #222;
+            color: var(--white);
             text-align: center;
-            margin-top: auto;
+            padding: 40px 0;
+            font-size: 0.9em;
         }
 
-        footer .container {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 20px;
-        }
-
-        footer .footer-links a {
-            color: var(--light-bg);
-            margin: 0 15px;
-            transition: color 0.3s ease;
-        }
-
-        footer .footer-links a:hover {
-            color: var(--primary-color);
-        }
-
-        .footer-social-links {
-            margin-top: 15px;
-        }
-
-        .footer-social-links a {
-            color: var(--light-bg);
-            font-size: 1.5em;
-            margin: 0 10px;
-            transition: color 0.3s ease;
-        }
-
-        .footer-social-links a:hover {
-            color: var(--primary-color);
-        }
-
-
-        /* Responsive Adjustments */
-        @media (max-width: 992px) {
-            h1 { font-size: 2.5em; }
-            h2 { font-size: 2em; }
-            h3 { font-size: 1.6em; }
-
-            .hero h1 { font-size: 3em; }
-            .hero p { font-size: 1.2em; }
-
-            .about-content, .contact-content {
-                flex-direction: column;
-                gap: 40px;
-            }
-            .about-image img {
-                max-width: 80%;
-            }
+        footer p {
+            margin: 0;
         }
 
         @media (max-width: 768px) {
             header .container {
                 flex-direction: column;
-                gap: 15px;
             }
-            nav ul {
+
+            header nav ul {
+                margin-top: 20px;
                 flex-wrap: wrap;
                 justify-content: center;
-                gap: 15px;
             }
-            nav ul li a {
-                padding: 5px 10px;
+
+            header nav ul li {
+                margin: 0 15px 10px;
             }
 
             .hero {
-                min-height: 60vh;
-                padding: 60px 0;
+                padding: 100px 20px;
             }
-            .hero h1 { font-size: 2.5em; }
-            .hero p { font-size: 1em; }
-            .hero .btn-group {
-                flex-direction: column;
-                gap: 15px;
+
+            .hero h1 {
+                font-size: 2.5em;
+            }
+
+            .hero p {
+                font-size: 1.2em;
             }
 
             section {
                 padding: 60px 0;
             }
 
-            .feature-item, .product-card {
-                padding: 20px;
+            section h2 {
+                font-size: 2em;
+                margin-bottom: 40px;
             }
 
-            .contact-form-container, .contact-info-container {
+            .feature-card {
+                padding: 30px;
+            }
+
+            .about .content {
+                font-size: 1em;
+            }
+
+            .contact-form {
                 padding: 30px;
             }
         }
 
         @media (max-width: 480px) {
-            h1 { font-size: 2em; }
-            h2 { font-size: 1.8em; }
-            h3 { font-size: 1.4em; }
+            header .logo {
+                font-size: 1.5em;
+            }
 
-            .hero h1 { font-size: 2em; }
-            .hero p { font-size: 0.9em; }
+            header nav ul li {
+                margin: 0 10px 10px;
+            }
 
-            .logo { font-size: 1.5em; }
-            nav ul { gap: 10px; }
-            nav ul li a { font-size: 0.9em; }
+            .hero h1 {
+                font-size: 2em;
+            }
+
+            .hero p {
+                font-size: 1em;
+            }
+
+            .button {
+                padding: 12px 25px;
+                font-size: 1em;
+            }
+
+            section h2 {
+                font-size: 1.8em;
+            }
         }
     </style>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
     <header>
         <div class="container">
-            <a href="#" class="logo">
-                <span class="logo-icon"><i class="fas fa-water"></i></span>
-                Vichy Catalan
-            </a>
+            <a href="#" class="logo">Vichy Catalan</a>
             <nav>
                 <ul>
-                    <li><a href="#hero" class="active">Home</a></li>
+                    <li><a href="#hero">Home</a></li>
+                    <li><a href="#features">Features</a></li>
                     <li><a href="#about">About</a></li>
-                    <li><a href="#benefits">Benefits</a></li>
-                    <li><a href="#products">Products</a></li>
                     <li><a href="#contact">Contact</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
-    <main>
-        <section id="hero" class="hero">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/Vichy_Catalan.JPG/800px-Vichy_Catalan.JPG" alt="Vichy Catalan Bottle" class="hero-image">
-            <div class="container">
-                <h1>Taste the Essence of the Earth</h1>
-                <p>Discover Vichy Catalan, the iconic natural sparkling mineral water from Spain, renowned for its unique taste, health benefits, and rich history since 1881.</p>
-                <div class="btn-group">
-                    <a href="#benefits" class="btn">Explore Benefits</a>
-                    <a href="#products" class="btn btn-outline">Our Products</a>
+    <section id="hero" class="hero">
+        <div class="container">
+            <h1>Vichy Catalan: More Than Just Water</h1>
+            <p>Explore the unique taste, rich history, and health benefits of Spain's iconic sparkling mineral water.</p>
+            <a href="#features" class="button">Discover What Makes It Unique</a>
+        </div>
+    </section>
+
+    <section id="features" class="features">
+        <div class="container">
+            <h2>Why Choose Vichy Catalan?</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="icon"><span>💧</span></div>
+                    <h3>Natural Mineral Water</h3>
+                    <p>Sourced from the thermal springs of Caldes de Malavella, offering a unique mineral composition directly from the earth.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="icon"><span>🥂</span></div>
+                    <h3>Distinctive Taste</h3>
+                    <p>Its fine, integrated bubbles and slight salinity provide an unparalleled refreshing and sophisticated drinking experience.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="icon"><span>❤️</span></div>
+                    <h3>Health Benefits</h3>
+                    <p>Known for its digestive properties and rich electrolytes, making it a healthy choice for everyday hydration and well-being.</p>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <section id="about">
-            <div class="container">
-                <h2>About Vichy Catalan</h2>
-                <div class="about-content">
-                    <div class="about-text">
-                        <h3>A Legacy of Purity and Taste</h3>
-                        <p>Vichy Catalan originates from the thermal springs of Caldes de Malavella, Girona, Spain, where it has been flowing naturally for centuries. Discovered and bottled by Dr. Modest Furest i Roca in 1881, this water quickly gained recognition for its exceptional mineral composition and delightful, naturally carbonated effervescence.</p>
-                        <p>With over 140 years of history, Vichy Catalan has become a symbol of quality and Spanish heritage. Its unique balanced flavor and healthful properties make it a favorite among chefs, sommeliers, and health-conscious individuals worldwide.</p>
-                        <p>Experience the tradition and natural goodness that define every drop of Vichy Catalan, a true gift from the earth.</p>
-                    </div>
-                    <div class="about-image">
-                        <img src="https://via.placeholder.com/500x350/ffe4e6/e11d48?text=Vichy+Catalan+Spring" alt="Vichy Catalan Thermal Springs">
-                    </div>
-                </div>
+    <section id="about" class="about">
+        <div class="container">
+            <h2>About Vichy Catalan</h2>
+            <div class="content">
+                <p>
+                    Vichy Catalan is one of the most prestigious mineral waters in the world, bottled since 1881 at its source in Caldes de Malavella, Girona, Spain. Its unique composition and natural carbonation have made it a symbol of quality and Spanish heritage. For over a century, Vichy Catalan has been synonymous with health, sophistication, and an exceptional taste experience. Its balanced mineral content, rich in bicarbonates, sodium, and potassium, contributes to its distinctive flavor and renowned digestive benefits.
+                </p>
+                <p>
+                    From humble beginnings as a therapeutic water recommended by doctors, Vichy Catalan has evolved into a global icon, gracing tables in fine dining establishments and homes alike. It's not just a beverage; it's an integral part of the Mediterranean lifestyle, often paired with meals to enhance flavors and aid digestion. This fan site celebrates the enduring legacy and unique charm of Vichy Catalan, inviting enthusiasts and newcomers alike to explore its rich history, distinct qualities, and the passion that surrounds this extraordinary sparkling water.
+                </p>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <section id="benefits">
-            <div class="container">
-                <h2>The Natural Benefits of Vichy Catalan</h2>
-                <p style="text-align: center; max-width: 800px; margin: 0 auto 50px auto;">Beyond its refreshing taste, Vichy Catalan is celebrated for its unique mineral composition, offering a range of health advantages that set it apart.</p>
-                <div class="features-grid">
-                    <div class="feature-item">
-                        <i class="fas fa-heartbeat"></i>
-                        <h3>Digestive Aid</h3>
-                        <p>Naturally rich in bicarbonate, Vichy Catalan helps neutralize stomach acidity, aiding digestion and reducing discomfort after meals.</p>
-                    </div>
-                    <div class="feature-item">
-                        <i class="fas fa-tint"></i>
-                        <h3>High Mineral Content</h3>
-                        <p>Packed with essential minerals like sodium, potassium, calcium, and magnesium, vital for maintaining body balance and wellness.</p>
-                    </div>
-                    <div class="feature-item">
-                        <i class="fas fa-spa"></i>
-                        <h3>Electrolyte Replenishment</h3>
-                        <p>Its unique mineral profile makes it an excellent choice for replenishing electrolytes, especially after physical activity.</p>
-                    </div>
-                    <div class="feature-item">
-                        <i class="fas fa-grin-beam"></i>
-                        <h3>Alkalizing Properties</h3>
-                        <p>Helps maintain the body's pH balance, contributing to overall health and vitality.</p>
-                    </div>
-                    <div class="feature-item">
-                        <i class="fas fa-leaf"></i>
-                        <h3>Naturally Sparkling</h3>
-                        <p>Unlike many sparkling waters, Vichy Catalan is naturally carbonated at its source, providing a distinct and pleasant effervescence.</p>
-                    </div>
-                    <div class="feature-item">
-                        <i class="fas fa-medal"></i>
-                        <h3>Culinary Favorite</h3>
-                        <p>Its fine bubbles and unique taste enhance culinary experiences, pairing perfectly with gourmet meals.</p>
-                    </div>
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2>Get In Touch</h2>
+            <form class="contact-form">
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" placeholder="Your Name" required>
                 </div>
-            </div>
-        </section>
-
-        <section id="products">
-            <div class="container">
-                <h2>Our Vichy Catalan Selection</h2>
-                <p style="text-align: center; max-width: 800px; margin: 0 auto 50px auto;">Discover the range of Vichy Catalan products, from the classic natural mineral water to innovative flavored options, all retaining the signature quality.</p>
-                <div class="products-grid">
-                    <div class="product-card">
-                        <img src="https://via.placeholder.com/400x250/fff1f2/e11d48?text=Vichy+Catalan+Classic" alt="Vichy Catalan Classic">
-                        <div class="product-info">
-                            <h3>Vichy Catalan Original</h3>
-                            <p>The timeless natural sparkling mineral water, iconic for its health benefits and crisp taste.</p>
-                            <a href="#" class="btn btn-outline">View Details</a>
-                        </div>
-                    </div>
-                    <div class="product-card">
-                        <img src="https://via.placeholder.com/400x250/fff1f2/e11d48?text=Vichy+Catalan+Lemon" alt="Vichy Catalan Lemon">
-                        <div class="product-info">
-                            <h3>Vichy Catalan Lemon</h3>
-                            <p>A refreshing twist with natural lemon flavor, perfect for a light, zesty hydration.</p>
-                            <a href="#" class="btn btn-outline">View Details</a>
-                        </div>
-                    </div>
-                    <div class="product-card">
-                        <img src="https://via.placeholder.com/400x250/fff1f2/e11d48?text=Vichy+Catalan+Orange" alt="Vichy Catalan Orange">
-                        <div class="product-info">
-                            <h3>Vichy Catalan Orange</h3>
-                            <p>Naturally flavored with orange, offering a delightful and invigorating sparkling experience.</p>
-                            <a href="#" class="btn btn-outline">View Details</a>
-                        </div>
-                    </div>
-                    <div class="product-card">
-                        <img src="https://via.placeholder.com/400x250/fff1f2/e11d48?text=Vichy+Catalan+Plastic" alt="Vichy Catalan Plastic Bottle">
-                        <div class="product-info">
-                            <h3>Vichy Catalan PET Bottle</h3>
-                            <p>Enjoy the same great taste and benefits in a convenient, shatterproof plastic bottle for on-the-go.</p>
-                            <a href="#" class="btn btn-outline">View Details</a>
-                        </div>
-                    </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" placeholder="your.email@example.com" required>
                 </div>
-            </div>
-        </section>
-
-        <section id="contact">
-            <div class="container">
-                <h2>Connect with the Vichy Catalan Community</h2>
-                <div class="contact-content">
-                    <div class="contact-form-container">
-                        <h3>Send Us a Message</h3>
-                        <form id="contactForm" class="contact-form">
-                            <label for="name">Name</label>
-                            <input type="text" id="name" name="name" required>
-
-                            <label for="email">Email</label>
-                            <input type="email" id="email" name="email" required>
-
-                            <label for="subject">Subject</label>
-                            <input type="text" id="subject" name="subject">
-
-                            <label for="message">Message</label>
-                            <textarea id="message" name="message" required></textarea>
-
-                            <button type="submit" class="btn">Send Message</button>
-                        </form>
-                    </div>
-                    <div class="contact-info-container">
-                        <h3>Contact Information</h3>
-                        <p><i class="fas fa-map-marker-alt"></i> Caldes de Malavella, Girona, Spain</p>
-                        <p><i class="fas fa-envelope"></i> info@vichycatalanfans.com</p>
-                        <p><i class="fas fa-phone-alt"></i> +34 972 XXX XXX</p>
-                        <div class="social-links">
-                            <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-                            <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-                            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                            <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
-                        </div>
-                    </div>
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" placeholder="Your Message..." required></textarea>
                 </div>
-            </div>
-        </section>
-    </main>
+                <button type="submit" class="button">Send Message</button>
+            </form>
+        </div>
+    </section>
 
     <footer>
         <div class="container">
-            <p>&copy; 2023 Vichy Catalan Fan Tribute. All rights reserved.</p>
-            <div class="footer-links">
-                <a href="#about">About</a>
-                <a href="#benefits">Benefits</a>
-                <a href="#products">Products</a>
-                <a href="#contact">Contact</a>
-            </div>
-            <div class="footer-social-links">
-                <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-                <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-                <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-            </div>
+            <p>&copy; 2023 Vichy Catalan Fan Site. All rights reserved. Not affiliated with Vichy Catalan S.A.</p>
         </div>
     </footer>
-
-    <script>
-        document.getElementById('contactForm').addEventListener('submit', function(event) {
-            event.preventDefault();
-
-            const name = document.getElementById('name').value;
-            const email = document.getElementById('email').value;
-            const subject = document.getElementById('subject').value;
-            const message = document.getElementById('message').value;
-
-            console.log('Form Submitted!');
-            console.log('Name:', name);
-            console.log('Email:', email);
-            console.log('Subject:', subject);
-            console.log('Message:', message);
-
-            alert('Thank you for your message, ' + name + '! We will get back to you soon.');
-
-            this.reset();
-        });
-
-        document.querySelectorAll('nav ul li a').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
-
-                document.querySelectorAll('nav ul li a').forEach(link => {
-                    link.classList.remove('active');
-                });
-                this.classList.add('active');
-            });
-        });
-
-        window.addEventListener('scroll', () => {
-            const sections = document.querySelectorAll('section');
-            const navLinks = document.querySelectorAll('nav ul li a');
-            let current = '';
-
-            sections.forEach(section => {
-                const sectionTop = section.offsetTop;
-                const sectionHeight = section.clientHeight;
-                if (pageYOffset >= sectionTop - sectionHeight / 3) {
-                    current = section.getAttribute('id');
-                }
-            });
-
-            navLinks.forEach(link => {
-                link.classList.remove('active');
-                if (link.getAttribute('href').includes(current)) {
-                    link.classList.add('active');
-                }
-            });
-        });
-
-        document.addEventListener('DOMContentLoaded', () => {
-            const heroLink = document.querySelector('nav ul li a[href="#hero"]');
-            if (heroLink) {
-                heroLink.classList.add('active');
-            }
-        });
-    </script>
 </body>
 </html>
